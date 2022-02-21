@@ -1,4 +1,4 @@
-package com.netcracker.edu.botlocation;
+package com.netcracker.edu.registeruser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
