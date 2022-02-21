@@ -1,23 +1,24 @@
 package com.netcracker.edu.botlocation.rest.controllers;
 
+import com.netcracker.edu.botlocation.data.models.User;
+import com.netcracker.edu.botlocation.services.implementations.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.autoconfigure.security.saml2.Saml2RelyingPartyProperties;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RegistrationController {
 
-    private RegistrationController registrationController;
-
     @Autowired
-    public RegistrationController(RegistrationController registrationController){
-        this.registrationController = registrationController;
+    private RegistrationService RegistrationService;
+
+    public RegistrationController(RegistrationService registrationService){
+        this.RegistrationService = RegistrationService;
     }
 
-    @GetMapping("/User/Regist")
-    public String regist(){
-
+    @PostMapping("/User/Regist")
+    public ResponseEntity<User> createUser(@RequestBody User user){
+        return ResponseEntity.ok(RegistrationService.createUser(user));
     }
 }
