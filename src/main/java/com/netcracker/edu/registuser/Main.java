@@ -1,4 +1,4 @@
-package com.netcracker.edu.botlocation;
+package com.netcracker.edu.registuser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
