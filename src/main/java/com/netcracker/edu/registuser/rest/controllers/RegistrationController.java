@@ -17,8 +17,5 @@ public class RegistrationController {
         return ResponseEntity.ok(registrationService.createUser(user));
     }
 
-    @GetMapping
-    public ResponseEntity <Iterable<User>> getAllUsers(){
-        return ResponseEntity.ok(registrationService.getUsers());
-    }
+
 }

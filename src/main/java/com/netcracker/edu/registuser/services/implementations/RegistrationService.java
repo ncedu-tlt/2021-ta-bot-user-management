@@ -15,7 +15,5 @@ public class RegistrationService {
         return userRepository.save(newUser);
     }
 
-    public Iterable<User> getUsers(){
-        return userRepository.findAll();
-    }
+
 }
