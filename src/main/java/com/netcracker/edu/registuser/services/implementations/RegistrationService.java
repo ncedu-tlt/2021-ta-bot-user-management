@@ -10,8 +10,12 @@ public class RegistrationService {
     @Autowired
     private UserRepository userRepository;
 
+
     public User createUser(User newUser){
         return userRepository.save(newUser);
     }
 
+    public Iterable<User> getUsers(){
+        return userRepository.findAll();
+    }
 }

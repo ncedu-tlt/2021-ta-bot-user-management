@@ -12,7 +12,7 @@
 	<artifactId>bot-location</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bot-location</name>
-	<description>Service for working with Location</description>
+	<description>Service for working with Registration</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

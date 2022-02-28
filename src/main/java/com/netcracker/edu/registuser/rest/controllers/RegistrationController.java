@@ -10,10 +10,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/User")
 public class RegistrationController {
     @Autowired
-    private RegistrationService RegistrationService;
+    private RegistrationService registrationService;
 
     @PostMapping("/Register")
     public ResponseEntity<User> createUser(@RequestBody User user){
-        return ResponseEntity.ok(RegistrationService.createUser(user));
+        return ResponseEntity.ok(registrationService.createUser(user));
+    }
+
+    @GetMapping
+    public ResponseEntity <Iterable<User>> getAllUsers(){
+        return ResponseEntity.ok(registrationService.getUsers());
     }
 }
