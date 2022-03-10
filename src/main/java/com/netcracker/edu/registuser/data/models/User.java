@@ -1,22 +1,41 @@
 package com.netcracker.edu.registuser.data.models;
 
-import lombok.AllArgsConstructor;
+import com.netcracker.edu.registuser.data.models.UiRole.UiUser;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
-    private int roleId;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
+
+    @Column(name = "name")
     private String name;
-    private Date registration = new Date();
-    private boolean subscription;
+
+    @Column(name = "registration")
+    private Date reg = new Date();
+
+    @Column(name = "subscription")
+    private boolean sub;
+
+    public User() {
+    }
+
+    public User(UiUser uiUser, Role role) {
+        setName(uiUser.getName());
+        setRole(role);
+    }
+
+
 }
+
