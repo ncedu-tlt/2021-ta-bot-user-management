@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class UiUser {
-    private String roleId;
-
+    private String role;
     private String name;
 }

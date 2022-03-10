@@ -12,11 +12,11 @@ public class Role {
     private int id;
 
     @Column(name = "name")
-    private String roleId;
+    private String role;
 
     public Role(int id, String role) {
         setId(id);
-        setRoleId(role);
+        setRole(role);
     }
 
     public Role() {

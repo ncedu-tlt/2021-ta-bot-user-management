@@ -23,10 +23,10 @@ public class User {
     private String name;
 
     @Column(name = "registration")
-    private Date reg = new Date();
+    private Date registrationDate = new Date();
 
     @Column(name = "subscription")
-    private boolean sub;
+    private boolean subscription;
 
     public User() {
     }

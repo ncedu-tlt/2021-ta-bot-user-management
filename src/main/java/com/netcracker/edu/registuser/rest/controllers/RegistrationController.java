@@ -20,7 +20,7 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody UiUser uiUser) {
-        Role role = roleService.findRoleByRoleId(uiUser.getRoleId());
+        Role role = roleService.findRoleByRole(uiUser.getRole());
         return ResponseEntity.ok(registrationService.createUser(uiUser, role));
     }
 
