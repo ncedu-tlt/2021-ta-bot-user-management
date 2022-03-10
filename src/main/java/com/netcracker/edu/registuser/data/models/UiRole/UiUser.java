@@ -6,4 +6,5 @@ import lombok.Data;
 public class UiUser {
     private String role;
     private String name;
+    private boolean subscription;
 }
