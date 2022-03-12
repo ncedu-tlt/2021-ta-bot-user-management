@@ -15,9 +15,18 @@ public class RegistrationService {
 
 
     public User createUser(UiUser uiUser, Role role) {
-
-            return userRepository.save(new User(uiUser, role));
-
+        return userRepository.save(new User(uiUser, role));
     }
 
+    public User updateSubscription(int id, UiUser uiUser){
+        User user = userRepository.getById(id);
+        user.setSubscription(uiUser.isSubscription());
+        return userRepository.save(user);
+    }
+
+    public User upDateCity(int id, UiUser uiUser) {
+        User user = userRepository.getById(id);
+        user.setCity(uiUser.getCity());
+        return userRepository.save(user);
+    }
 }

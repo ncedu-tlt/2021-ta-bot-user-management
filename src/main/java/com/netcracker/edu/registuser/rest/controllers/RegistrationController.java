@@ -15,13 +15,32 @@ public class RegistrationController {
     @Autowired
     private RegistrationService registrationService;
 
-    @Autowired
     private RoleService roleService;
+    
+    public RegistrationController(RoleService roleService){
+        this.roleService = roleService;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody UiUser uiUser) {
         Role role = roleService.findRoleByRole(uiUser.getRole());
         return ResponseEntity.ok(registrationService.createUser(uiUser, role));
+    }
+
+    @PutMapping("/{id}/subscription")
+    public ResponseEntity<User> updateSubscription(@PathVariable("id") int id, @RequestBody UiUser uiUser) {
+        if (uiUser.isSubscription() == false) {
+            System.out.println("Вы подписались");
+            return ResponseEntity.ok(registrationService.updateSubscription(id, uiUser));
+        } else {
+            System.out.println("Вы отписались");
+            return ResponseEntity.ok(registrationService.updateSubscription(id, uiUser));
+        }
+    }
+
+    @PutMapping("/{id}/city")
+    public ResponseEntity<User> upDateCity(@PathVariable("id") int id, @RequestBody UiUser uiUser) {
+        return ResponseEntity.ok(registrationService.upDateCity(id, uiUser));
     }
 
 

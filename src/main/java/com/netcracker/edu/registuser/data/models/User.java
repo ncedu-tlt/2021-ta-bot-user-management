@@ -11,7 +11,7 @@ import java.util.Date;
 @Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 
@@ -28,6 +28,9 @@ public class User {
     @Column(name = "subscription")
     private boolean subscription;
 
+    @Column(name = "city")
+    private String city;
+
     public User() {
     }
 
@@ -35,6 +38,7 @@ public class User {
         setSubscription(uiUser.isSubscription());
         setName(uiUser.getName());
         setRole(role);
+        setCity(uiUser.getCity());
     }
 
 
