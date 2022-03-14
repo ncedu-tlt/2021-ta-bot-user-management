@@ -38,6 +38,8 @@ public class RegistrationController {
         }
     }
 
+
+
     @PutMapping("/{id}/city")
     public ResponseEntity<User> upDateCity(@PathVariable("id") int id, @RequestBody UiUser uiUser) {
         return ResponseEntity.ok(registrationService.upDateCity(id, uiUser));

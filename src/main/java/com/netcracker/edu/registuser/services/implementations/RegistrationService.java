@@ -15,7 +15,14 @@ public class RegistrationService {
 
 
     public User createUser(UiUser uiUser, Role role) {
-        return userRepository.save(new User(uiUser, role));
+        User nameFind = userRepository.findUserByName(uiUser.getName());
+        if(nameFind != null) {
+            System.out.println("Пользователь есть в базе данных");
+            return userRepository.findUserByName(uiUser.getName());
+        }
+        else {
+            return userRepository.save(new User(uiUser, role));
+        }
     }
 
     public User updateSubscription(int id, UiUser uiUser){
@@ -28,5 +35,9 @@ public class RegistrationService {
         User user = userRepository.getById(id);
         user.setCity(uiUser.getCity());
         return userRepository.save(user);
+    }
+
+    public User findUserByName(String name){
+        return userRepository.findUserByName(name);
     }
 }
