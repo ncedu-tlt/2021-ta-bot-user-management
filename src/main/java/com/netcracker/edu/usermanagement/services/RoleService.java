@@ -1,4 +1,4 @@
-package com.netcracker.edu.usermanagement.services.implementations;
+package com.netcracker.edu.usermanagement.services;
 
 import com.netcracker.edu.usermanagement.data.models.Role;
 import com.netcracker.edu.usermanagement.data.repositories.RoleRepository;

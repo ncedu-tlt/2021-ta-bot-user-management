@@ -1,6 +1,5 @@
 package com.netcracker.edu.usermanagement.data.models;
 
-import com.netcracker.edu.usermanagement.data.models.UiRole.UiUser;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,8 +9,8 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 

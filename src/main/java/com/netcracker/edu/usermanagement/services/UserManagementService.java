@@ -1,4 +1,4 @@
-package com.netcracker.edu.usermanagement.services.implementations;
+package com.netcracker.edu.usermanagement.services;
 
 import com.netcracker.edu.usermanagement.data.models.Role;
 import com.netcracker.edu.usermanagement.data.models.UiRole.UiUser;
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserManagementService {
@@ -17,16 +18,15 @@ public class UserManagementService {
     @Autowired
     private RoleService roleService;
 
-
     public User createUser(UiUser uiUser) {
         Role role = roleService.findRoleByRole(uiUser.getRole());
-        User nameFind = userRepository.findUserByName(uiUser.getName());
+        User nameFind = userRepository.findUserById(uiUser.getId());
 
         if (nameFind != null) {
-            System.out.println("Пользователь есть в базе данных");
             return nameFind;
         } else {
             User user = new User();
+            user.setId(uiUser.getId());
             user.setSubscription(uiUser.isSubscription());
             user.setName(uiUser.getName());
             user.setRole(role);
@@ -38,19 +38,22 @@ public class UserManagementService {
 
     public User updateSubscription(int id, UiUser uiUser) {
 
-        User user = userRepository.getById(id);
+        User user = userRepository.findUserById(id);
         user.setSubscription(uiUser.isSubscription());
-        if (!user.isSubscription()) {
-            System.out.println("Вы подписались");
-        } else {
-            System.out.println("Вы отписались");
-        }
         return userRepository.save(user);
     }
 
     public User upDateCity(int id, UiUser uiUser) {
-        User user = userRepository.getById(id);
+        User user = userRepository.findUserById(id);
         user.setCity(uiUser.getCity());
         return userRepository.save(user);
+    }
+
+    public User findUserById(int id) {
+        return userRepository.findUserById(id);
+    }
+
+    public List<User> findUserBySubscription(){
+        return userRepository.findUserBySubscription();
     }
 }
