@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.netcracker.edu</groupId>
-	<artifactId>bot-location</artifactId>
+	<artifactId>user-managment</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bot-location</name>
+	<name>user-managment</name>
 	<description>Service for working with Registration</description>
 	<properties>
 		<java.version>1.8</java.version>

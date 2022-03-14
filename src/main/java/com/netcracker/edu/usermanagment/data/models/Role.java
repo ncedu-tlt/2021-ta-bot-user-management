@@ -1,4 +1,4 @@
-package com.netcracker.edu.registuser.data.models;
+package com.netcracker.edu.usermanagment.data.models;
 
 import lombok.Data;
 

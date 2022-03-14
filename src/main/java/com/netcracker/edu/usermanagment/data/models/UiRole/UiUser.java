@@ -1,4 +1,4 @@
-package com.netcracker.edu.registuser.data.models.UiRole;
+package com.netcracker.edu.usermanagment.data.models.UiRole;
 
 import lombok.Data;
 
