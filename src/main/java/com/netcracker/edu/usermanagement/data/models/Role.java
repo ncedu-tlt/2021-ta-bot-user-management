@@ -14,13 +14,4 @@ public class Role {
     @Column(name = "name")
     private String role;
 
-    public Role(int id, String role) {
-        setId(id);
-        setRole(role);
-    }
-
-    public Role() {
-
-    }
-
 }

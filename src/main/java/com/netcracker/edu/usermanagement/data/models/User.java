@@ -23,24 +23,13 @@ public class User {
     private String name;
 
     @Column(name = "registration")
-    private Date registrationDate = new Date();
+    private Date registrationDate;
 
     @Column(name = "subscription")
     private boolean subscription;
 
     @Column(name = "city")
     private String city;
-
-    public User() {
-    }
-
-    public User(UiUser uiUser, Role role) {
-        setSubscription(uiUser.isSubscription());
-        setName(uiUser.getName());
-        setRole(role);
-        setCity(uiUser.getCity());
-    }
-
 
 }
 
