@@ -1,10 +1,10 @@
-package com.netcracker.edu.usermanagment.rest.controllers;
+package com.netcracker.edu.usermanagement.rest.controllers;
 
-import com.netcracker.edu.usermanagment.data.models.Role;
-import com.netcracker.edu.usermanagment.data.models.UiRole.UiUser;
-import com.netcracker.edu.usermanagment.data.models.User;
-import com.netcracker.edu.usermanagment.services.implementations.RegistrationService;
-import com.netcracker.edu.usermanagment.services.implementations.RoleService;
+import com.netcracker.edu.usermanagement.data.models.Role;
+import com.netcracker.edu.usermanagement.data.models.UiRole.UiUser;
+import com.netcracker.edu.usermanagement.data.models.User;
+import com.netcracker.edu.usermanagement.services.implementations.RegistrationService;
+import com.netcracker.edu.usermanagement.services.implementations.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

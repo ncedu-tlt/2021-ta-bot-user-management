@@ -1,6 +1,6 @@
-package com.netcracker.edu.usermanagment.data.models;
+package com.netcracker.edu.usermanagement.data.models;
 
-import com.netcracker.edu.usermanagment.data.models.UiRole.UiUser;
+import com.netcracker.edu.usermanagement.data.models.UiRole.UiUser;
 import lombok.Data;
 
 import javax.persistence.*;

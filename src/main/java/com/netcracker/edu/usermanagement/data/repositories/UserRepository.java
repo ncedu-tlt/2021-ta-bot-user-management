@@ -1,6 +1,6 @@
-package com.netcracker.edu.usermanagment.data.repositories;
+package com.netcracker.edu.usermanagement.data.repositories;
 
-import com.netcracker.edu.usermanagment.data.models.User;
+import com.netcracker.edu.usermanagement.data.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

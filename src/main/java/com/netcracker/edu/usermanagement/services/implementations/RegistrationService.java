@@ -1,9 +1,9 @@
-package com.netcracker.edu.usermanagment.services.implementations;
+package com.netcracker.edu.usermanagement.services.implementations;
 
-import com.netcracker.edu.usermanagment.data.models.Role;
-import com.netcracker.edu.usermanagment.data.models.UiRole.UiUser;
-import com.netcracker.edu.usermanagment.data.models.User;
-import com.netcracker.edu.usermanagment.data.repositories.UserRepository;
+import com.netcracker.edu.usermanagement.data.models.Role;
+import com.netcracker.edu.usermanagement.data.models.UiRole.UiUser;
+import com.netcracker.edu.usermanagement.data.models.User;
+import com.netcracker.edu.usermanagement.data.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
