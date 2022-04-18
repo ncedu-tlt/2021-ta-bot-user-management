@@ -1,13 +1,14 @@
-package com.netcracker.edu.usermanagement.services.implementations;
+package com.netcracker.edu.user.service;
 
-import com.netcracker.edu.usermanagement.data.models.Role;
-import com.netcracker.edu.usermanagement.data.models.UiRole.UiUser;
-import com.netcracker.edu.usermanagement.data.models.User;
-import com.netcracker.edu.usermanagement.data.repositories.UserRepository;
+import com.netcracker.edu.user.model.Role;
+import com.netcracker.edu.user.model.UiRole.UiUser;
+import com.netcracker.edu.user.model.User;
+import com.netcracker.edu.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserManagementService {
@@ -53,4 +54,9 @@ public class UserManagementService {
         user.setCity(uiUser.getCity());
         return userRepository.save(user);
     }
+
+    public User findUserById(int id) {
+
+        return userRepository.findUserById(id);}
+
 }
