@@ -42,5 +42,4 @@ public class UserManagementController {
         return ResponseEntity.ok(userManagementService.findUserBySubscription());
     }
 
-
 }
